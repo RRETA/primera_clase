@@ -1,22 +1,7 @@
 variable_1 =int(input("Primer Valor "))
 variable_2 = int(input("Segundo Valor "))
-operaciones = ["suma","resta","multiplicacion","division","division exacta","Elevar al cuadrado","Elevar al cubo","Modulo"]
-
-def ejecucion_operacion(var1,var2,operacion):
-    
-    #if operacion == "suma": result = var1 + var2
-    #if operacion == "resta": result = var1 - var2
-    #if operacion == "multiplicacion": result = var1 * var2
-    #if operacion == "division": result = var1 / var2
-    if operacion == "division exacta": result = var1 // var2
-    if operacion == "Elevar al cuadrado": result = var1 ** 2
-    if operacion == "Elevar al cubo": result = var1 ** 3
-    if operacion == "Modulo": result = var1 % var2
-    else: result = 0
-    return result
-
-
-
+operaciones = {"suma": variable_1 + variable_2, "resta": variable_1 -variable_2, "multiplicacion": variable_1 * variable_2, "division":variable_1/variable_2,
+"division_exacta": variable_1 // variable_2, "elevar_al_cuadrado_1": variable_1 ** 2, "elevar_al_cuadrado_2": variable_2 ** 2, "elevar_al_cubo_1": variable_1 ** 3, 
+"elevar_al_cubo_2": variable_2 ** 3,"modulo": variable_1 % variable_2}
 for operacion in operaciones:
-    resultado = ejecucion_operacion(variable_1,variable_2,operacion)
-    print("El resultado de la operacion {0} es {1}".format(operacion,resultado))
+    print("El resultado de la operacion {0} es {1}".format(operacion.replace("_"," "),operaciones[operacion]))
